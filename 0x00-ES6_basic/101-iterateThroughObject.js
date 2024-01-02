@@ -3,7 +3,7 @@ export default function iterateThroughObject(reportWithIterator) {
   let first = true;
   for (const rep of reportWithIterator) {
     if (!first) {
-      names += ' | ';
+      names += '|';
     }
     if (rep !== undefined) {
       names += rep;
