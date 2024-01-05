@@ -9,7 +9,7 @@ export default class HolbertonCourse {
     }
 
     if (!Array.isArray(students) || !students.every((item) => typeof item === 'string')) {
-      throw TypeError('Students must an array contain only strings');
+      throw TypeError('Students must be an array contain only strings');
     }
 
     this._name = name;
@@ -29,15 +29,24 @@ export default class HolbertonCourse {
     return this._students;
   }
 
-  set name(name) {
-    this._name = name;
+  set name(value) {
+    if (typeof value !== 'string') {
+      throw TypeError('Name must be a string');
+    }
+    this._name = value;
   }
 
-  set length(length) {
-    this._length = length;
+  set length(value) {
+    if (typeof value !== 'number') {
+      throw TypeError('Length must be a number');
+    }
+    this._length = value;
   }
 
-  set students(students) {
-    this._students = students;
+  set students(value) {
+    if (!Array.isArray(value) || !value.every((item) => typeof item === 'string')) {
+      throw TypeError('Students must be an array contain only strings');
+    }
+    this._students = value;
   }
 }
