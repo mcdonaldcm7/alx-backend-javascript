@@ -1,16 +1,23 @@
 export default function cleanSet(set, startString) {
-  let all = '';
-  let sep = false;
-  for (const x of set) {
-    if (x.startsWith(startString) && startString.length >= 1) {
-      if (sep) {
-        all += '-';
-      }
-      all += x.substr(startString.length);
-      if (!sep) {
-        sep = true;
+  if (typeof startString !== 'string' || !(set instanceof Set)) {
+    return '';
+  }
+  if (startString === '' || startString === undefined) {
+    return '';
+  }
+  const prefixIndex = startString.length;
+  let finalString = '';
+  let appended = false;
+  for (const item of set) {
+    if (typeof item === 'string') {
+      if (item.startsWith(startString)) {
+        if (appended) {
+          finalString += '-';
+        }
+        finalString += item.substring(prefixIndex);
+        appended = true;
       }
     }
   }
-  return all;
+  return finalString;
 }
