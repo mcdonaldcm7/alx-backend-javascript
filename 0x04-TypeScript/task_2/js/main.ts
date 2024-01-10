@@ -48,3 +48,20 @@ function createEmployee(salary: number | string): Teacher | Director {
   }
   return new Director();
 }
+
+function isDirector(employee: Teacher | Director): employee is Director {
+  // Mediocre
+  // return (employee.workFromHome() == 'Working from home');
+  return (employee instanceof Director);
+}
+
+function executeWork(employee: Teacher | Director) {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  } else {
+    return employee.workTeacherTasks();
+  }
+}
+
+// console.log(executeWork(createEmployee(200)));
+// console.log(executeWork(createEmployee(1000)));
