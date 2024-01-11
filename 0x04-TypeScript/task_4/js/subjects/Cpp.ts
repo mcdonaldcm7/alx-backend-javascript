@@ -1,6 +1,6 @@
-/// <reference path='Teacher.ts' />
+/// <reference path='Subject.ts' />
 
-namespace Subjects {
+export namespace Subjects {
   export interface Teacher {
     experienceTeachingC: number;
   }
@@ -11,7 +11,7 @@ namespace Subjects {
     }
 
     getAvailableTeacher() {
-      return `Available Teacher: ${this.teacher.firstName}`;
+      return `Available Teacher: ${super.teacher.firstName}`;
     }
   }
 }
