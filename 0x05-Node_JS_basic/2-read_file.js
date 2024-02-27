@@ -19,10 +19,14 @@ const fs = require('node:fs');
 function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
-    const lines = data.split('\n');
-    while (lines[lines.length - 1] === '') {
-      lines.pop();
-    }
+    const lines = data.split('\n').filter((word) => word.length > 0);
+
+    /**
+     * while (lines[lines.length - 1] === '') {
+     * lines.pop();
+     * }
+     */
+
     console.log(`Number of students: ${lines.length - 1}`);
     const studentsFields = {};
     // Fetches all the fields and adds them to a set
@@ -43,6 +47,7 @@ function countStudents(path) {
       }
     }
   } catch (error) {
+    console.log(error);
     throw new Error('Cannot load the database');
   }
 }
