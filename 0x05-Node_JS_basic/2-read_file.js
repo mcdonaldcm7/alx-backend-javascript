@@ -20,7 +20,7 @@ function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
     const lines = data.split('\n');
-    if (lines[lines.length - 1] === '') {
+    while (lines[lines.length - 1] === '') {
       lines.pop();
     }
     console.log(`Number of students: ${lines.length - 1}`);
