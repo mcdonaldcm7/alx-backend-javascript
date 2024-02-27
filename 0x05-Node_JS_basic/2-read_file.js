@@ -13,7 +13,6 @@ function countStudents(path) {
      * }
      */
 
-    console.log(`Number of students: ${lines.length - 1}`);
     const studentsFields = {};
     // Fetches all the fields and adds them to a set
     for (let i = 1; i < lines.length; i += 1) {
@@ -27,6 +26,15 @@ function countStudents(path) {
         studentsFields[field] = [name];
       }
     }
+
+    let nOfStudents = 0;
+    for (const k in studentsFields) {
+      if (k !== undefined) {
+        nOfStudents += studentsFields[k].length;
+      }
+    }
+    console.log(`Number of students: ${nOfStudents}`);
+
     for (const k in studentsFields) {
       if (k !== undefined) {
         console.log(`Number of students in ${k}: ${studentsFields[k].length}. List: ${studentsFields[k].join(', ')}`);
