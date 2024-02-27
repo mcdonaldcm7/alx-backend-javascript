@@ -20,7 +20,9 @@ function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
     const lines = data.split('\n');
-    lines.pop();
+    if (lines[lines.length - 1] === '') {
+      lines.pop();
+    }
     console.log(`Number of students: ${lines.length - 1}`);
     const studentsFields = {};
     // Fetches all the fields and adds them to a set
