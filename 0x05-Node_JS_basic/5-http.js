@@ -48,7 +48,7 @@ const app = http.createServer((req, res) => {
         }
         res.end(response);
       } catch (error) {
-        throw new Error('Cannot load the database');
+        res.end('Cannot load the database');
       }
       break;
     case '/':
