@@ -1,5 +1,5 @@
-function displayMessage (msg) {
-  // process.stdout.write(msg + '\n');
+function displayMessage(msg) {
+  // process.stdout.write(msg);
   console.log(msg);
 }
 
