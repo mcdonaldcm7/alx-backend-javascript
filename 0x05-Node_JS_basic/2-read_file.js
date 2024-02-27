@@ -14,11 +14,13 @@
  * student!
  */
 
-const fs = require('node:fs');
+const fs = require('fs');
 
 function countStudents(path) {
-  try {
-    const data = fs.readFileSync(path, 'utf8');
+  fs.readFile(path, 'utf8', (err, data) => {
+    if (err) {
+      throw new Error('Cannot load the database');
+    }
     const lines = data.split('\n').filter((word) => word.length > 0);
 
     /**
@@ -46,9 +48,7 @@ function countStudents(path) {
         console.log(`Number of students in ${k}: ${studentsFields[k].length}. List: ${studentsFields[k].join(', ')}`);
       }
     }
-  } catch (error) {
-    throw new Error('Cannot load the database');
-  }
+  });
 }
 
 module.exports = countStudents;
