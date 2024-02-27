@@ -23,7 +23,7 @@ function countStudents(path) {
 
     /**
      * while (lines[lines.length - 1] === '') {
-     * lines.pop();
+     *   lines.pop();
      * }
      */
 
@@ -47,7 +47,6 @@ function countStudents(path) {
       }
     }
   } catch (error) {
-    console.log(error);
     throw new Error('Cannot load the database');
   }
 }
