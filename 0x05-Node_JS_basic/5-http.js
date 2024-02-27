@@ -55,7 +55,6 @@ const app = http.createServer((req, res) => {
       res.end('Hello Holberton School!');
       break;
     default:
-      res.end('Cannot load the database');
   }
 });
 
