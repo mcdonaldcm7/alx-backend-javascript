@@ -55,8 +55,7 @@ const app = http.createServer((req, res) => {
       res.end('Hello Holberton School!');
       break;
     default:
-      res.statusCode = 404;
-      res.end('Page Not Found');
+      res.end('Hello Holberton School!');
   }
 });
 
