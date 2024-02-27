@@ -54,8 +54,6 @@ const app = http.createServer((req, res) => {
     case '/':
       res.end('Hello Holberton School!');
       break;
-    default:
-      res.end('Hello Holberton School!');
   }
 });
 
