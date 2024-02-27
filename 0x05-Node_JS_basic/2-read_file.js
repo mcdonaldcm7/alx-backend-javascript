@@ -6,14 +6,9 @@ function countStudents(path) {
       throw new Error('Cannot load the database');
     }
     const lines = data.split('\n').filter((word) => word.length > 0);
-
-    /**
-     * while (lines[lines.length - 1] === '') {
-     *   lines.pop();
-     * }
-     */
-
+    console.log(`Number of students: ${lines.length - 1}`);
     const studentsFields = {};
+
     // Fetches all the fields and adds them to a set
     for (let i = 1; i < lines.length; i += 1) {
       const line = lines[i].split(',');
@@ -26,14 +21,6 @@ function countStudents(path) {
         studentsFields[field] = [name];
       }
     }
-
-    let nOfStudents = 0;
-    for (const k in studentsFields) {
-      if (k !== undefined) {
-        nOfStudents += studentsFields[k].length;
-      }
-    }
-    console.log(`Number of students: ${nOfStudents}`);
 
     for (const k in studentsFields) {
       if (k !== undefined) {
