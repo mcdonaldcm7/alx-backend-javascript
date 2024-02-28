@@ -48,13 +48,14 @@ const app = http.createServer((req, res) => {
         }
         res.end(response);
       } catch (error) {
-        res.end('Cannot load the database');
+        res.end('This is the list of our students\nCannot load the database');
       }
       break;
     case '/':
       res.end('Hello Holberton School!');
       break;
     default:
+      res.end('Hello Holberton School!');
   }
 });
 
