@@ -36,7 +36,7 @@ app.get('/students', (req, res) => {
     }
     res.send(response.substring(0, (response.length - 1)));
   } catch (error) {
-    res.send('Cannot load the database');
+    res.send('This is the list of our students\nCannot load the database');
   }
 });
 
