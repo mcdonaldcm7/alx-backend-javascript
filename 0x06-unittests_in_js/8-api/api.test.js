@@ -10,4 +10,10 @@ describe('Index Page', function() {
       expect(body).to.equal('Welcome to the payment system');
     });
   });
+
+  it('Test for page not found(404) Error', function() {
+    request('http://localhost:7865/Hi', function(error, response, body) {
+      expect(response.statusCode).to.equal(404);
+    });
+  });
 });
