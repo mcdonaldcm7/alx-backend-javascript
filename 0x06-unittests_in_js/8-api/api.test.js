@@ -16,4 +16,10 @@ describe('Index Page', function() {
       expect(response.statusCode).to.equal(404);
     });
   });
+
+  it('Test for GET /', function() {
+    request('http://localhost:7865/', function(error, response, body) {
+      expect(response.statusCode).to.equal(200);
+    });
+  });
 });
