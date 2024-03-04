@@ -21,10 +21,10 @@ function readDatabase(path) {
             studentsFields[field] = [name];
           }
         }
-        resolve(studentsField); // Resolves the promises with the studentFields object
+        resolve(studentsFields); // Resolves the promises with the studentFields object
       }
     });
   });
 }
 
-module.exports = readDatabase;
+export default readDatabase;
