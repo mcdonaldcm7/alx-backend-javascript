@@ -8,7 +8,7 @@ class StudentsController {
     readDatabase(path)
       .then((result) => {
         let responseMessage = 'This is the first list of our students\n';
-        // Sorts the key alphabetically (Case insensitive) 
+        // Sorts the key alphabetically (Case insensitive)
         const sortedKeys = Object.keys(result).sort((a, b) => a.localeCompare(b));
 
         for (const key of sortedKeys) {
